@@ -1,0 +1,7 @@
+{
+  "git.autoRepositoryDetection": false,
+  "git.openRepositoryInParentFolders": "never",
+  "git.ignoredRepositories": [
+    "/home/david/tyche/great-learning"
+  ]
+}
