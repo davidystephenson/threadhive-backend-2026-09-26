@@ -7,8 +7,8 @@ import {
 import authHandler from "../middleware/authHandler.js";
 const router = express.Router();
 
-router.get("/",authHandler, getAllSubreddits);
-router.post("/",authHandler, createSubreddit);
-router.get("/:id",authHandler, getSubredditWithThreads);
+router.get("/", authHandler, getAllSubreddits);
+router.post("/", authHandler, createSubreddit);
+router.get("/:id", authHandler, getSubredditWithThreads);
 
 export default router;

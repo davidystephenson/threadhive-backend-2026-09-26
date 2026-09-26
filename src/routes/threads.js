@@ -11,10 +11,10 @@ import authHandler from "../middleware/authHandler.js";
 
 const router = express.Router();
 
-router.get("/", getAllThreads);
-router.get("/:id", getThreadByID);
-router.post("/", createThread);
-router.put("/:id", updateThread);
-router.delete("/:id", deleteThread);
+router.get("/", authHandler, getAllThreads);
+router.get("/:id", authHandler, getThreadByID);
+router.post("/", authHandler, createThread);
+router.put("/:id", authHandler, updateThread);
+router.delete("/:id", authHandler, deleteThread);
 
 export default router;
