@@ -4,7 +4,7 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import threadRoutes from "./routes/threads.js";
 import subredditRoutes from "./routes/subreddits.js";
-// import auth from "./routes/auth.js";
+import authRoutes from "./routes/auth.js";
 import commentRoutes from "./routes/comments.js";
 import voteRoutes from "./routes/votes.js";
 import errorHandler from "./middleware/errorHandler.js";
@@ -39,10 +39,13 @@ app.use(
 // Routes
 app.use("/api/threads", threadRoutes);
 app.use("/api/subreddits", subredditRoutes);
-// app.use("/api/auth", auth);
+app.use("/api/auth", authRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api", voteRoutes);
 
+// After everything else is done,
+// if there was an error,
+// call the error handler middleware
 app.use(errorHandler);
 
 export default app;
